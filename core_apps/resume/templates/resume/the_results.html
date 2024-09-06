@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %} {% if results %}
+<h2>Interview Results</h2>
+<ul>
+  {% for result in results %}
+  <li>{{ result.interview_questions }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>{{ error }}</p>
+{% endif %} {% endblock content %}

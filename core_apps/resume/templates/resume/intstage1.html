@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content%}
+<br />
+<div class="container bg-white shadow-md p-5 form-layout">
+  <h3>Update Your Details</h3>
+  <p>Update the below to get a better reply and a more suited results</p>
+
+  <br />
+  <form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %} {{form|crispy}}
+    <button type="submit" class="btn btn-info">Update Details</button>
+    <button type="submit" class="btn btn-danger"><a href="{% url "dashboard" %}">Go Back</a></button>
+  </form>
+</div>
+
+{% endblock content %}
