@@ -1,8 +1,17 @@
 from django import forms
+from .models import Results
 from core_apps.account.models import CustomUser
+
+
+class JobDescriptionForm(forms.ModelForm):
+    class Meta:
+        model = Results
+        fields = [
+            "job_description",
+        ]
 
 
 class UpdateDetails(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ("resume", "job_description", "background_info", "achievement")
+        fields = ["resume", "background_info", "achievement"]
